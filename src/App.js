@@ -26,12 +26,14 @@ function App() {
   }, [query, page]);
 
   return (
-    <Container fixed >
-      <div style={{textAlign: 'center'}}>
-
-      <Typography variant="h4">IOT83 Code Challenge</Typography>
+    <Container fixed>
+      <div style={{ textAlign: "center" }}>
+        <Typography variant="h4">IOT83 Code Challenge</Typography>
       </div>
-      <form style={{ margin: "40px auto", float: "right" }}  onSubmit={e => e.preventDefault()}>
+      <form
+        style={{ margin: "40px auto", float: "right" }}
+        onSubmit={(e) => e.preventDefault()}
+      >
         <input
           type="text"
           placeholder="Search.."
@@ -40,12 +42,13 @@ function App() {
         />
       </form>
       {!query ? (
-        <Typography variant="subtitle3">Please enter a search term in the search box !</Typography>
+        <Typography variant="subtitle3">
+          Please enter a search term in the search box !
+        </Typography>
       ) : (
         <div className="App">
-          <div style={{textAlign: 'center'}}>
-
-          <Typography variant="subtitle1">Page: {page}</Typography>
+          <div style={{ textAlign: "center" }}>
+            <Typography variant="subtitle1">Page: {page}</Typography>
           </div>
           {data.map((photo) => (
             <Card
@@ -56,8 +59,13 @@ function App() {
               title={photo.title}
             />
           ))}
-          <div className="pagination" >
-            <Pagination count={10} page={page} onChange={handleChange} color="primary" />
+          <div className="pagination">
+            <Pagination
+              count={10}
+              page={page}
+              onChange={handleChange}
+              color="primary"
+            />
           </div>
         </div>
       )}
