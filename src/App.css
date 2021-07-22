@@ -4,3 +4,8 @@
   width: 100%;
 }
 
+.pagination {
+  margin: 30px auto;
+  width: 400px;
+}
+
