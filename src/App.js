@@ -38,7 +38,10 @@ function App() {
           type="text"
           placeholder="Search.."
           value={query}
-          onChange={(e) => setQuery(e.target.value.toLowerCase())}
+          onChange={(e) => {
+            setPage(1);
+            setQuery(e.target.value.toLowerCase());
+          }}
         />
       </form>
       {!query ? (
